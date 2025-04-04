@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Login</title>
+    <style>
+        .container { max-width: 400px; margin: 50px auto; text-align: center; }
+        .btn { padding: 10px 20px; background: #3498db; color: white; border: none; cursor: pointer; }
+        .btn:hover { background: #2980b9; }
+        .error { color: red; margin: 10px 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>User Login</h2>
+    <p th:if="${param.error}" class="error">Invalid credentials or unauthorized access.</p>
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="Enter Username" required><br><br>
+        <input type="password" name="password" placeholder="Enter Password" required><br><br>
+        <input type="hidden" name="loginType" value="USER" />
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <p><a href="/register">Register here</a></p>
+</div>
+</body>
+</html>

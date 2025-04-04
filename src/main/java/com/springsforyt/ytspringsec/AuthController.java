@@ -13,12 +13,26 @@ public class AuthController {
     return "home"; // Ensure home.html exists in src/main/resources/templates/
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login"; // Ensure login.html exists in templates/
+    // @GetMapping("/login")
+    // public String login() {
+    //     return "login"; // Ensure login.html exists in templates/
+    // }
+
+    @GetMapping("/user_login")
+    public String userLogin() {
+        return "user_login"; // 
+    }
+
+    @GetMapping("/admin_login")
+    public String adminLogin() {
+        return "admin_login"; 
     }
 
 
+    @GetMapping("/invalid")
+    public String invalid() {
+        return "invalid"; 
+    }
     private final UserService userService;
 
     public AuthController(UserService userService) {
